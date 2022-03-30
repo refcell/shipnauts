@@ -1,6 +1,20 @@
-# local-ethernauts
+# shipnauts
 
-This challenge is based on https://ethernaut.openzeppelin.com/
+Challenges based on https://ethernaut.openzeppelin.com/
+
+Run all tests with:
+```sh
+npx hardhat node
+# then:
+npm run testall
+```
+
+Or, run tests individually with:
+```sh
+npm run test1
+```
+
+where `test1` is the level test (e.g. CoinFlip is `test1`, Delegation is `test2`, etc etc)
 
 # Setup
 

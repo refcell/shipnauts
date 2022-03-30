@@ -1,6 +1,6 @@
 import { expect } from "chai";
 import { ethers } from "hardhat";
-import helper from "./CoinFlipHelper"
+import helper from "./CoinFlipHelper";
 
 let victim: any;
 let attacker: any;
